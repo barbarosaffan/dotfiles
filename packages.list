@@ -2,8 +2,10 @@
 stow
 xkill
 xclip
+zsh
 # editor
 vim
+code
 
 # languages
 golang
