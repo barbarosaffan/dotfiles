@@ -1,0 +1,30 @@
+import = ["~/.config/alacritty/catppuccin/catppuccin-mocha.toml"]
+
+live_config_reload = true
+
+[window]
+decorations = "buttonless"
+dynamic_padding = false
+
+[window.padding]
+x = 25
+y = 20
+
+[font]
+size = 16.0
+
+[font.bold]
+family = "GeistMono Nerd Font Mono"
+style = "Heavy"
+
+[font.bold_italic]
+family = "GeistMono Nerd Font Mono"
+style = "Heavy Italic"
+
+[font.italic]
+family = "GeistMono Nerd Font Mono"
+style = "Medium Italic"
+
+[font.normal]
+family = "GeistMono Nerd Font Mono"
+style = "Medium"
