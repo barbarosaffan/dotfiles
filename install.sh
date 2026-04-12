@@ -44,6 +44,15 @@ symlink() {
 
 symlink "$DOTFILES_DIR/zsh/.zshrc" "$HOME/.zshrc"
 
+# ── VSCode ────────────────────────────────────────────────────────────────────
+VSCODE_DIR="$HOME/Library/Application Support/Code/User"
+if [ -d "$VSCODE_DIR" ]; then
+  symlink "$DOTFILES_DIR/vscode/settings.json"   "$VSCODE_DIR/settings.json"
+  symlink "$DOTFILES_DIR/vscode/keybindings.json" "$VSCODE_DIR/keybindings.json"
+else
+  warn "VSCode not found — skipping VSCode symlinks"
+fi
+
 # ── Done ──────────────────────────────────────────────────────────────────────
 echo ""
 echo "✓ Done! Reload your shell: source ~/.zshrc"

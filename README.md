@@ -7,6 +7,8 @@ Personal macOS dotfiles — zsh configuration without Oh My Zsh.
 | File | Description |
 |------|-------------|
 | `zsh/.zshrc` | Zsh config: PATH exports, git aliases, plugin sources |
+| `vscode/settings.json` | VSCode editor settings |
+| `vscode/keybindings.json` | VSCode custom keybindings |
 
 ### Shell stack
 
@@ -17,6 +19,23 @@ Personal macOS dotfiles — zsh configuration without Oh My Zsh.
 | [zoxide](https://github.com/ajeetdsouza/zoxide) | Smart `z` directory jumping |
 | [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) | Fish-style inline suggestions |
 | [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) | Command syntax highlighting |
+
+### VSCode
+
+`vscode/settings.json` notable settings:
+
+| Setting | Value |
+|---------|-------|
+| Font | MonoLisa |
+| Terminal font | GeistMono Nerd Font Mono |
+| Format on save | ✓ (Prettier for JS/TS/CSS/HTML/Vue) |
+| ESLint fix on save | ✓ |
+| Organize imports on save | ✓ |
+| Inline suggestions (Copilot) | ✓ |
+| Cursor style | Block |
+| Tab style | Single tab |
+
+`vscode/keybindings.json` — `Ctrl+Enter` / `Shift+Enter` in terminal sends a line continuation (`\`).
 
 ### Git aliases
 
