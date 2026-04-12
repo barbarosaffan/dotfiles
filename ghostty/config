@@ -1,0 +1,23 @@
+# Ghostty Configuration
+
+# Font Settings
+font-family = GeistMono Nerd Font Mono
+font-size = 16
+
+# Window Settings
+window-width = 120
+window-height = 20
+window-padding-x = 8
+window-padding-y = 8
+macos-titlebar-style = tabs
+
+# Shell Integration
+auto-update = check
+
+# Cursor Style
+cursor-style = block
+cursor-style-blink = true
+shell-integration-features = no-cursor
+
+# Theme
+theme = Catppuccin Frappe

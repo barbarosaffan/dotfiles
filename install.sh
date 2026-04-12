@@ -44,6 +44,10 @@ symlink() {
 
 symlink "$DOTFILES_DIR/zsh/.zshrc" "$HOME/.zshrc"
 
+# ── Git ───────────────────────────────────────────────────────────────────────
+symlink "$DOTFILES_DIR/git/.gitconfig"        "$HOME/.gitconfig"
+symlink "$DOTFILES_DIR/git/.gitignore_global" "$HOME/.gitignore_global"
+
 # ── VSCode ────────────────────────────────────────────────────────────────────
 VSCODE_DIR="$HOME/Library/Application Support/Code/User"
 if [ -d "$VSCODE_DIR" ]; then
@@ -53,10 +57,27 @@ else
   warn "VSCode not found — skipping VSCode symlinks"
 fi
 
+# ── Ghostty ───────────────────────────────────────────────────────────────────
+if [ -d "$HOME/.config/ghostty" ]; then
+  symlink "$DOTFILES_DIR/ghostty/config" "$HOME/.config/ghostty/config"
+else
+  mkdir -p "$HOME/.config/ghostty"
+  symlink "$DOTFILES_DIR/ghostty/config" "$HOME/.config/ghostty/config"
+fi
+
+# ── Zed ───────────────────────────────────────────────────────────────────────
+if [ -d "$HOME/.config/zed" ]; then
+  symlink "$DOTFILES_DIR/zed/settings.json" "$HOME/.config/zed/settings.json"
+else
+  warn "Zed not found — skipping Zed symlinks"
+fi
+
 # ── Done ──────────────────────────────────────────────────────────────────────
 echo ""
 echo "✓ Done! Reload your shell: source ~/.zshrc"
 echo ""
 echo "Optional next steps:"
+echo "  • Install all Homebrew packages from Brewfile: brew bundle"
 echo "  • Pick a Starship theme: starship preset pastel-powerline -o ~/.config/starship.toml"
 echo "  • Browse presets: https://starship.rs/presets/"
+echo "  • Add your Context7 API key to zed/settings.json"

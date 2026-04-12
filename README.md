@@ -7,8 +7,13 @@ Personal macOS dotfiles — zsh configuration without Oh My Zsh.
 | File | Description |
 |------|-------------|
 | `zsh/.zshrc` | Zsh config: PATH exports, git aliases, plugin sources |
+| `git/.gitconfig` | Git identity, aliases, sensible defaults |
+| `git/.gitignore_global` | Global gitignore (macOS, editors, secrets, build output) |
+| `ghostty/config` | Ghostty terminal emulator config |
+| `zed/settings.json` | Zed editor settings |
 | `vscode/settings.json` | VSCode editor settings |
 | `vscode/keybindings.json` | VSCode custom keybindings |
+| `Brewfile` | All Homebrew packages — restore with `brew bundle` |
 
 ### Shell stack
 
@@ -19,6 +24,29 @@ Personal macOS dotfiles — zsh configuration without Oh My Zsh.
 | [zoxide](https://github.com/ajeetdsouza/zoxide) | Smart `z` directory jumping |
 | [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) | Fish-style inline suggestions |
 | [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) | Command syntax highlighting |
+
+### Git
+
+`git/.gitconfig` includes:
+- Auto-setup remote on push
+- Default branch `main`
+- `core.autocrlf = input` (safe for macOS/Linux)
+- Points to `~/.gitignore_global`
+- Useful aliases: `lg` (pretty graph log), `undo` (soft reset last commit)
+
+`git/.gitignore_global` ignores globally: `.DS_Store`, `.env`, `node_modules`, editor files, build artifacts.
+
+> **Note:** After cloning, set your git identity in `git/.gitconfig` if different from the defaults.
+
+### Ghostty
+
+`ghostty/config` — Font: GeistMono Nerd Font Mono 16px, Theme: Catppuccin Frappe, block cursor.
+
+### Zed
+
+`zed/settings.json` — Font: MonoLisa, vim mode, VSCode keymap, Copilot edit predictions, Ayu theme.
+
+> **Note:** Add your Context7 API key to `zed/settings.json` under `context_servers.mcp-server-context7.settings.context7_api_key` — it is intentionally left blank in this repo.
 
 ### VSCode
 
@@ -37,7 +65,7 @@ Personal macOS dotfiles — zsh configuration without Oh My Zsh.
 
 `vscode/keybindings.json` — `Ctrl+Enter` / `Shift+Enter` in terminal sends a line continuation (`\`).
 
-### Git aliases
+### Git aliases (zsh)
 
 | Alias | Command |
 |-------|---------|
@@ -62,7 +90,7 @@ Personal macOS dotfiles — zsh configuration without Oh My Zsh.
 ## Installation
 
 ```sh
-git clone https://github.com/<your-username>/dotfiles.git ~/dotfiles
+git clone https://github.com/barbarosaffan/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 chmod +x install.sh
 ./install.sh
@@ -71,8 +99,21 @@ chmod +x install.sh
 The install script will:
 
 1. Install **Homebrew** if not already present
-2. Install required packages via `brew install`
-3. Symlink `zsh/.zshrc` → `~/.zshrc` (backs up any existing file as `.bak`)
+2. Install required shell packages via `brew install`
+3. Symlink all config files (backs up any existing file as `.bak`):
+   - `zsh/.zshrc` → `~/.zshrc`
+   - `git/.gitconfig` → `~/.gitconfig`
+   - `git/.gitignore_global` → `~/.gitignore_global`
+   - `ghostty/config` → `~/.config/ghostty/config`
+   - `zed/settings.json` → `~/.config/zed/settings.json`
+   - `vscode/settings.json` → `~/Library/Application Support/Code/User/settings.json`
+   - `vscode/keybindings.json` → `~/Library/Application Support/Code/User/keybindings.json`
+
+### Restore all Homebrew packages
+
+```sh
+brew bundle
+```
 
 ## Customising the prompt
 
@@ -91,10 +132,9 @@ rm ~/.config/starship.toml
 
 ## Adding your own config
 
-Edit `zsh/.zshrc` and re-run `./install.sh` (symlink is already in place, so changes take effect immediately after `source ~/.zshrc`).
-
-To track additional dotfiles, add a new `symlink` call in `install.sh`:
+Edit the relevant file in this repo — since everything is symlinked, changes take effect immediately. To track a new dotfile, copy it into the repo, then add a `symlink` call in `install.sh`:
 
 ```sh
 symlink "$DOTFILES_DIR/path/to/config" "$HOME/.config/tool/config"
 ```
+
