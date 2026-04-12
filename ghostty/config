@@ -3,6 +3,8 @@
 # Font Settings
 font-family = GeistMono Nerd Font Mono
 font-size = 16
+font-thicken = true
+font-feature = ss09
 
 # Window Settings
 window-width = 120
@@ -10,6 +12,9 @@ window-height = 20
 window-padding-x = 8
 window-padding-y = 8
 macos-titlebar-style = tabs
+window-save-state = always
+confirm-close-surface = false
+resize-overlay = never
 
 # Shell Integration
 auto-update = check
@@ -19,5 +24,24 @@ cursor-style = block
 cursor-style-blink = true
 shell-integration-features = no-cursor
 
+# Mouse
+mouse-hide-while-typing = true
+
+# Clipboard
+copy-on-select = clipboard
+clipboard-paste-protection = false
+
+# Scrollback
+scrollback-limit = 10000
+
+# Visual
+background-opacity = 0.95
+unfocused-split-opacity = 0.85
+bold-is-bright = false
+
 # Theme
 theme = Catppuccin Frappe
+
+# Keybindings
+keybind = cmd+k=clear_screen
+keybind = cmd+shift+f=toggle_fullscreen
