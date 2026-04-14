@@ -35,12 +35,33 @@ clipboard-paste-protection = false
 scrollback-limit = 10000
 
 # Visual
-background-opacity = 0.95
+background-opacity = 1.0
 unfocused-split-opacity = 0.85
 bold-is-bright = false
 
 # Theme
-theme = Catppuccin Frappe
+background = #000000
+foreground = #ffffff
+selection-background = #333333
+selection-foreground = #ffffff
+
+# Palette — keep colors readable on pure black
+palette = 0=#1c1c1c
+palette = 1=#ff5f5f
+palette = 2=#5fdf5f
+palette = 3=#dfdf5f
+palette = 4=#5f87ff
+palette = 5=#df5fff
+palette = 6=#5fdfdf
+palette = 7=#c8c8c8
+palette = 8=#3a3a3a
+palette = 9=#ff8787
+palette = 10=#87ff87
+palette = 11=#ffff87
+palette = 12=#87afff
+palette = 13=#ff87ff
+palette = 14=#87ffff
+palette = 15=#ffffff
 
 # Keybindings
 keybind = cmd+k=clear_screen
