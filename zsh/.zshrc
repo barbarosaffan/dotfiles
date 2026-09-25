@@ -7,8 +7,7 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
 
 # Java
-export PATH="/opt/homebrew/opt/openjdk@21/bin:$PATH"
-export JAVA_HOME=$(/usr/libexec/java_home -v 21)
+export JAVA_HOME="$(brew --prefix openjdk)"
 export PATH="$JAVA_HOME/bin:$PATH"
 
 # Android

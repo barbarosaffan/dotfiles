@@ -1,29 +1,51 @@
-tap "anomalyco/tap"
+# Dependency manager for Cocoa projects
 brew "cocoapods"
+# GNU File, Shell, and Text utilities
+brew "coreutils"
+# Secure runtime for JavaScript and TypeScript
+brew "deno"
+# Easiest way to build and release mobile apps
+brew "fastlane"
+# GitHub command-line tool
+brew "gh"
+# Quickly rewrite git repository history
 brew "git-filter-repo"
+# Open-source build automation tool based on the Groovy and Kotlin DSL
 brew "gradle"
+# Simple terminal UI for git commands
 brew "lazygit"
+# Clone of ls with colorful output, file type icons, and more
 brew "lsd"
+# Java-based project management
 brew "maven"
+# Deep clean and optimize your Mac
 brew "mole"
+# Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
-brew "openjdk@21"
+# Search tool like grep and The Silver Searcher
 brew "ripgrep"
+# Cross-shell prompt for astronauts
 brew "starship"
-brew "tesseract"
-brew "tesseract-lang"
+# Watch files and take action when they change
 brew "watchman"
+# Internet file retriever
 brew "wget"
+# Generate your Xcode project from a spec file and your folder structure
+brew "xcodegen"
+# Shell extension to navigate your filesystem faster
 brew "zoxide"
+# Fish-like fast/unobtrusive autosuggestions for zsh
 brew "zsh-autosuggestions"
+# Fish shell like syntax highlighting for zsh
 brew "zsh-syntax-highlighting"
-brew "anomalyco/tap/opencode"
-cask "copilot-cli"
+# Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
-cask "jordanbaird-ice"
+# Replacement for Docker Desktop
 cask "orbstack"
+# Control your tools with a few keystrokes
+cask "raycast"
+# System monitor for the menu bar
 cask "stats"
-cask "warp"
 vscode "bradlc.vscode-tailwindcss"
 vscode "christian-kohler.path-intellisense"
 vscode "davidanson.vscode-markdownlint"
