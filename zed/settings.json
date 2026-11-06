@@ -18,6 +18,9 @@
   "ui_font_family": "Geist",
   "icon_theme": "Zed (Default)",
   "agent_servers": {
+    "claude-acp": {
+      "type": "registry"
+    },
     "github-copilot-cli": {
       "type": "registry",
     },
